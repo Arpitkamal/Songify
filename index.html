@@ -6,11 +6,25 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Songify</title>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<div>
-    <input type="text" id="input1">
-    <input type="submit" id="btn">
+<div class="wrapper">
+    <section class="welcome-screen">
+        <h1> Welcome to Songify </h1>
+        <h3> Enter name to access your account </h3>
+        <div class="input-wrapper">
+            <input type="text" placeholder="Name" id="name-input">
+            <button> Go </button>
+        </div>
+    </section>
+    <section class="main hidden">
+        <h1>  </h1>
+    </section>
 </div>
 <script src="main.js"></script>
 </body>

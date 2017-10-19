@@ -1,4 +1,5 @@
-var button=document.querySelector('#btn');
-button.addEventListener('click', function () {
-  console.log(document.querySelector('#input1').value)
+var $btn =$('.input-wrapper button');
+
+$btn.on('click' , function () {
+    alert('I am clicked ' + $('#name-input').val())
 });
