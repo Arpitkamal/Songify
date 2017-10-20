@@ -1,5 +1,4 @@
-var $btn =$('.input-wrapper button');
-
-$btn.on('click' , function () {
-    alert('I am clicked ' + $('#name-input').val())
+$('.input-wrapper>button').on('click ' , function () {
+    $('.welcome-screen').addClass('hidden');
+    $('.main').removeClass('hidden');
 });
