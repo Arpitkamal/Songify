@@ -99,3 +99,7 @@ h1 {
     width: 20px ;
     text-align: center;
 }
+.current-date{
+    float: right;
+    margin: 10px 7px 7px 7px;
+}
