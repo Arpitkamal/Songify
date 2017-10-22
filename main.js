@@ -6,3 +6,8 @@ $('.input-wrapper button').on('click ' , function (event) {
     $('.main').removeClass('hidden');
 });
 
+$('.main header>button').on('click' , function () {
+   $('.main').addClass('hidden');
+   $('.welcome-screen').removeClass('hidden');
+});
+
