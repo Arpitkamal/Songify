@@ -35,7 +35,6 @@ h1 {
 .main {
     width: 100%;
     height: 100%;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -52,8 +51,9 @@ h1 {
 }
 
 .main .content {
-    flex:1;
     background-color: #1f1f1f;
+    height: 100%;
+    width: 100%;
 }
 
 .main footer {
@@ -63,7 +63,6 @@ h1 {
 }
 
 .controls {
-    display:flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
@@ -87,4 +86,14 @@ h1 {
 
 .play-icon {
 // color: teal;
+}
+.controls i{
+    color: gray;
+    margin: 0 auto;
+    font-size: 10px;
+    height: 20px !important;
+    width: 20px !important;
+}
+.fa{
+    color: gray;
 }
