@@ -20,7 +20,9 @@ h1 {
 .wrapper {
     height: 100%;
     width: 100%;
-    background-color: #BBB;
+    background: url("http://i1.wp.com/www.icrt.com.tw/wordpress/wp-content/uploads/2015/01/swans-band-live.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 .welcome-screen {

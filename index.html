@@ -15,13 +15,16 @@
         <h1> Welcome to Songify </h1>
         <h3> Enter name to access your account </h3>
         <div class="input-wrapper">
-            <input type="text" placeholder="Name" id="name-input">
+            <form >
+            <input type="text" placeholder="Name" id="name-input" required minlength="3">
             <button> Go </button>
+            </form>
         </div>
     </section>
     <section class="main hidden">
         <header> <div class="right floated user-name">  </div> </header>
         <section class="content">
+            <audio src="song.mp3" controls=""></audio>
         </section>
         <footer>
             <div class="controls">
