@@ -6,6 +6,20 @@ $('.input-wrapper form').on('submit' , function (event) {
     $('.main').removeClass('hidden');
     var fullDate = new Date();
     $('.main header .current-date').html(fullDate)
+    $(document).on('keypress' , function (event) {
+        if(event.keyCode == 32) {
+            var song = $('audio')[0];
+            if (song.paused) {
+                song.play();
+                $('.clickable').addClass('fa-pause').removeClass('fa-play');
+            }
+            else {
+                song.pause();
+                $('.clickable').addClass('fa-play').removeClass('fa-pause');
+            }
+        }
+    });
+
 });
 
 $('.main header>button').on('click' , function () {
@@ -17,12 +31,13 @@ $('.clickable').on('click', function () {
    var song= $('audio')[0];
    if(song.paused) {                            // if(ispaused)
        song.play();
-       $(this).addClass('fa-pause');
-       $(this).removeClass('fa-play');           // ispaused=false
+       $(this).addClass('fa-pause').removeClass('fa-play');
+       // ispaused=false
    }
    else {
        song.pause();
-       $(this).addClass('fa-play');
-       $(this).removeClass('fa-pause');           // ispaused=true
+       $(this).addClass('fa-play').removeClass('fa-pause');
+       // ispaused=true
    }
 });
+
