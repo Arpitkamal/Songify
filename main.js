@@ -1,6 +1,6 @@
 $(document).ready(function () {
+    const song =$('audio')[0];
     function togglemusic() {
-        var song= $('audio')[0];
         if(song.paused) {                            // if(ispaused)
             song.play();
             $('.clickable').addClass('fa-pause').removeClass('fa-play');
@@ -13,6 +13,8 @@ $(document).ready(function () {
         }
     }
 
+    $('.song-name').text('zindagi kuch to bata');
+
     function formattime(time) {
         const min= Math.floor(time/60);
         const sec= Math.floor(time%60);
@@ -20,14 +22,13 @@ $(document).ready(function () {
     }
 
     function timer() {
-        const song =$('audio')[0];
         const currenttime = formattime(song.duration);
         const duration = formattime(song.currentTime);
         $('.song-duration').text(currenttime);
         $('.time-elapsed').text(duration);
     }
     timer();
-    setInterval(timer, 10000);
+    setInterval(timer, 100000);
 
     $('.input-wrapper form').on('submit' , function (event) {
         event.preventDefault();
