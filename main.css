@@ -150,6 +150,7 @@ h1 {
 }
 .song > span:first-child {
     width: 330px;
+    padding-left: 0;
 }
 
 .song .song-duration {
