@@ -55,13 +55,19 @@ $(document).ready(function () {
         $('.welcome-screen').removeClass('hidden');
     });
 
-    const songlist=['zindagi kush to bata', 'song2', 'song3', 'song4'];
+    const songlist=['zindagi kush to bata', 'Tere Sang Yaara','Tinka Tinka Dil Mera','Aakad'];
     for ( var i=0; i<songlist.length; i++) {
         var index=i+1;
         $('#song'+index+ ' .song-name').text(songlist[i]);
     }
+    const songartist=['Jubin nautiyal', 'Atif aslam', 'Rahat fateh ali khan ', 'Ranjit bawa'];
+    for (var j=0; j<songartist.length; j++){
+        var index1=j+1;
+        $('#song'+index1+ '.song-artist').text(songartist[j]);
+    }
 
     const filename=['song1.mp3','song2.mp3','song3.mp3','song4.mp3'];
+
     $('#song1').on('click', function () {
         if (song.src.search(filename[0]) === -1){
             song.src = filename[0];
