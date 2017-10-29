@@ -63,19 +63,36 @@ $(document).ready(function () {
 
     const filename=['song1.mp3','song2.mp3','song3.mp3','song4.mp3'];
     $('#song1').on('click', function () {
-        song.src=filename[0];
-        togglemusic();
+        if (song.src.search(filename[0]) === -1){
+            song.src = filename[0];
+            togglemusic();
+        }else {
+            togglemusic();
+        }
     });
     $('#song2').on('click', function () {
-        song.src=filename[1];
-        togglemusic()
+        if (song.src.search(filename[1]) === -1){
+            song.src = filename[1];
+            togglemusic();
+        }else {
+
+            togglemusic();
+        }
     });
     $('#song3').on('click', function () {
-        song.src=filename[2];
-        togglemusic();
+        if (song.src.search(filename[2]) === -1){
+            song.src = filename[2];
+            togglemusic()
+        }else {
+            togglemusic();
+        }
     });
     $('#song4').on('click', function () {
-        song.src=filename[3];
-        togglemusic();
+        if (song.src.search(filename[3]) === -1){
+            togglemusic();
+            song.src = filename[3];
+        }else {
+            togglemusic();
+        }
     });
 });

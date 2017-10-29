@@ -168,3 +168,9 @@ h1 {
 .song-name {
     text-align: center;
 }
+.main .current-date{
+    float: right;
+}
+.main button{
+    float: right;
+}
