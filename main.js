@@ -56,14 +56,21 @@ $(document).ready(function () {
     });
 
     const songlist=['zindagi kush to bata', 'Tere Sang Yaara','Tinka Tinka Dil Mera','Aakad'];
+
+    const songartist=['Jubin nautiyal', 'Atif aslam', 'Rahat fateh ali khan ', 'Ranjit bawa'];
+    const songalbum=['Tubelight','Rustam', 'Tubelight',' Bhalwan Singh'];
+    const songduration=['4:23','4:51','5:02','3:29'];
     for ( var i=0; i<songlist.length; i++) {
         var index=i+1;
         $('#song'+index+ ' .song-name').text(songlist[i]);
+        $('#song'+index+ ' .song-artist').text(songartist[i]);
+        $('#song'+index+ ' .song-album').text(songalbum[i]);
+        $('#song'+index+ ' .song-length').text(songduration[i]);
     }
-    const songartist=['Jubin nautiyal', 'Atif aslam', 'Rahat fateh ali khan ', 'Ranjit bawa'];
+
     for (var j=0; j<songartist.length; j++){
         var index1=j+1;
-        $('#song'+index1+ '.song-artist').text(songartist[j]);
+        $('#song'+index1+ ' .song-artist').text(songartist[j]);
     }
 
     const filename=['song1.mp3','song2.mp3','song3.mp3','song4.mp3'];

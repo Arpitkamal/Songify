@@ -146,7 +146,6 @@ h1 {
 .song > span {
     display: inline-block;
     width: 150px;
-    overflow: hidden;
     height: 1rem;
 }
 .song > span:first-child {
@@ -180,5 +179,8 @@ h1 {
     background-color: #1db954;
     border: none;
     box-shadow: none;
+    color: white;
+}
+.song-list .song-artist{
     color: white;
 }
