@@ -68,44 +68,19 @@ $(document).ready(function () {
         $('#song'+index+ ' .song-length').text(songduration[i]);
     }
 
-    for (var j=0; j<songartist.length; j++){
-        var index1=j+1;
-        $('#song'+index1+ ' .song-artist').text(songartist[j]);
-    }
 
     const filename=['song1.mp3','song2.mp3','song3.mp3','song4.mp3'];
-
-    $('#song1').on('click', function () {
-        if (song.src.search(filename[0]) === -1){
-            song.src = filename[0];
-            togglemusic();
-        }else {
-            togglemusic();
-        }
-    });
-    $('#song2').on('click', function () {
-        if (song.src.search(filename[1]) === -1){
-            song.src = filename[1];
-            togglemusic();
-        }else {
-
-            togglemusic();
-        }
-    });
-    $('#song3').on('click', function () {
-        if (song.src.search(filename[2]) === -1){
-            song.src = filename[2];
-            togglemusic()
-        }else {
-            togglemusic();
-        }
-    });
-    $('#song4').on('click', function () {
-        if (song.src.search(filename[3]) === -1){
-            togglemusic();
-            song.src = filename[3];
-        }else {
-            togglemusic();
-        }
-    });
+    function onclick_play(id , index) {
+        $(id).on('click', function () {
+            if (song.src.search(filename[index]) === -1){
+                song.src = filename[index];
+                togglemusic();
+            }else {
+                togglemusic();
+            }
+        });
+    }
+    for (var i=1 ;i<=filename.length;i++){
+        onclick_play('#song'+ i, i-1);
+    }
 });
