@@ -62,10 +62,11 @@ $(document).ready(function () {
     const songduration=['4:23','4:51','5:02','3:29'];
     for ( var i=0; i<songlist.length; i++) {
         var index=i+1;
-        $('#song'+index+ ' .song-name').text(songlist[i]);
-        $('#song'+index+ ' .song-artist').text(songartist[i]);
-        $('#song'+index+ ' .song-album').text(songalbum[i]);
-        $('#song'+index+ ' .song-length').text(songduration[i]);
+        var audio = $('#song'+index);
+        audio.find(' .song-name').text(songlist[i]);
+        audio.find(' .song-artist').text(songartist[i]);
+        audio.find(' .song-album').text(songalbum[i]);
+        audio.find(' .song-length').text(songduration[i]);
     }
 
     const filename=['song1.mp3','song2.mp3','song3.mp3','song4.mp3'];
