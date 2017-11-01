@@ -60,13 +60,40 @@ $(document).ready(function () {
     const songartist=['Jubin nautiyal', 'Atif aslam', 'Rahat fateh ali khan ', 'Ranjit bawa'];
     const songalbum=['Tubelight','Rustam', 'Tubelight',' Bhalwan Singh'];
     const songduration=['4:23','4:51','5:02','3:29'];
+    const songsinfo =[
+        {
+        name:"zindagi kush to bata",
+        artist:"Jubin nautiyal",
+        album:"Tubelight",
+        duration:"4:23"
+        },
+        {
+            name:"Tere Sang Yaara",
+            artist:"Atif aslam",
+            album:"Rustam",
+            duration:"4:51"
+        },
+        {
+            name:"Tinka Tinka dil mera",
+            artist:"Rahat fateh ali khan",
+            album:"Tubelight",
+            duration:"5:02"
+        },
+        {
+            name:"Akad",
+            artist:"Ranjit bawa",
+            album:"Bhalwan Singh",
+            duration:"3:29"
+        }
+    ];
+
     for ( var i=0; i<songlist.length; i++) {
         var index=i+1;
         var audio = $('#song'+index);
-        audio.find(' .song-name').text(songlist[i]);
-        audio.find(' .song-artist').text(songartist[i]);
-        audio.find(' .song-album').text(songalbum[i]);
-        audio.find(' .song-length').text(songduration[i]);
+        audio.find(' .song-name').text(songsinfo[i].name);
+        audio.find(' .song-artist').text(songsinfo[i].artist);
+        audio.find(' .song-album').text(songsinfo[i].album);
+        audio.find(' .song-length').text(songsinfo[i].duration);
     }
 
     const filename=['song1.mp3','song2.mp3','song3.mp3','song4.mp3'];
