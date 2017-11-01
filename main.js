@@ -68,7 +68,6 @@ $(document).ready(function () {
         $('#song'+index+ ' .song-length').text(songduration[i]);
     }
 
-
     const filename=['song1.mp3','song2.mp3','song3.mp3','song4.mp3'];
     function onclick_play(id , index) {
         $(id).on('click', function () {
