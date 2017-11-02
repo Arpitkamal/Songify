@@ -55,52 +55,58 @@ $(document).ready(function () {
         $('.welcome-screen').removeClass('hidden');
     });
 
-    const songlist=['zindagi kush to bata', 'Tere Sang Yaara','Tinka Tinka Dil Mera','Aakad'];
-
-    const songartist=['Jubin nautiyal', 'Atif aslam', 'Rahat fateh ali khan ', 'Ranjit bawa'];
-    const songalbum=['Tubelight','Rustam', 'Tubelight',' Bhalwan Singh'];
-    const songduration=['4:23','4:51','5:02','3:29'];
+    // using objects song name ,artist, album,duration in display on list
     const songsinfo =[
         {
         name:"zindagi kush to bata",
         artist:"Jubin nautiyal",
         album:"Tubelight",
-        duration:"4:23"
+        duration:"4:23",
+            url:"https://i.ytimg.com/vi/iYjm0OSo7YM/hqdefault.jpg"
         },
         {
             name:"Tere Sang Yaara",
             artist:"Atif aslam",
             album:"Rustam",
-            duration:"4:51"
+            duration:"4:51",
+            url:"http://s1.hulkshare.com/song_images/original/3/3/0/3300da097381b691b8c45a7fcec93ee1.jpg?dd=1471168193"
         },
         {
             name:"Tinka Tinka dil mera",
             artist:"Rahat fateh ali khan",
             album:"Tubelight",
-            duration:"5:02"
+            duration:"5:02",
+            url:"https://cover.djpunjab.com/40039/300x300/Tinka-Tinka-Dil-Mera-(Tubelight)-Rahat-Fateh-Ali-Khan.jpg"
         },
         {
             name:"Akad",
             artist:"Ranjit bawa",
             album:"Bhalwan Singh",
-            duration:"3:29"
+            duration:"3:29",
+            url:"https://cover.djpunjab.com/40917/300x5/Aakad_(Bhalwan_Singh)_Ranjit_Bawa.jpg"
         }
     ];
 
-    for ( var i=0; i<songlist.length; i++) {
+    for ( var i=0; i<songsinfo.length; i++) {
         var index=i+1;
         var audio = $('#song'+index);
+        console.log(audio);
         audio.find(' .song-name').text(songsinfo[i].name);
         audio.find(' .song-artist').text(songsinfo[i].artist);
         audio.find(' .song-album').text(songsinfo[i].album);
         audio.find(' .song-length').text(songsinfo[i].duration);
     }
 
+    // function for  on click play song in list
     const filename=['song1.mp3','song2.mp3','song3.mp3','song4.mp3'];
     function onclick_play(id , index) {
         $(id).on('click', function () {
             if (song.src.search(filename[index]) === -1){
                 song.src = filename[index];
+                var current_song= $('.current-song-wrapper');
+                current_song.find('img').attr('src', songsinfo[index].url);
+                current_song.find(' .current-song-album').text(songsinfo[index].album);
+                current_song.find(' .current-song-image').src=songsinfo[index].url;
                 togglemusic();
             }else {
                 togglemusic();
