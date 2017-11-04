@@ -208,8 +208,8 @@ h1 {
 }
 .song-lyrics{
     display: none;
-    margin-top: 150px;
-    margin-left: 117px;
+
+    background-color: black;
 }
 .current-song-name:hover .content.song-lyrics-outer {
     display: inline-block;

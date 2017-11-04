@@ -66,7 +66,38 @@ $(document).ready(function () {
         album:"Tubelight",
         duration:"4:23",
             url:"https://i.ytimg.com/vi/iYjm0OSo7YM/hqdefault.jpg",
-            songfile:'song1.mp3'
+            songfile:'song1.mp3',
+            lyrics1:'Ek Din Mohabbat Odh Kar\n' +
+            'Ek Din Gali Ke Mod Par\n' +
+            'Teri Hatheli Par\n' +
+            'Likhun Mera Naam Tere Naam Par\n' +
+            'Phir Tu Taqalluf Chhod Kar\n' +
+            'Phir Tu Jhuka Kar Ke Nazar\n' +
+            'Rakhna Mere Kaandhe Pe Sar\n' +
+            'Zindagi…\n' +
+            'Kuch To Bata Zindagi\n' +
+            'Apna Pataa Zindagi..\n' +
+            'Kuch Toh Bataa Zindagi\n' +
+            'Apna Pataa Zindagi..\n' +
+            'Taaron Bhari Ek Raat Mein\n' +
+            'Tere Khat Padhenge Saath Mein\n' +
+            'Kora Jo Panna Reh Gaya\n' +
+            'Ek Kaanpte Se Haath Mein\n' +
+            'Thodi Shiqaayat Karna Tu\n' +
+            'Thodi Shiqayat Main Karun\n' +
+            'Naraaz Bas Na Hona Tu,\n' +
+            'Zindagi…\n' +
+            'Kuch To Bata Zindagi\n' +
+            'Apna Pataa Zindagi..\n' +
+            'Kuch Toh Bataa Zindagi\n' +
+            'Apna Pataa Zindagi..\n' +
+            'Tu Hai To Main Hoon..\n' +
+            'Tu Hai To Main Hoon..\n' +
+            'Tu Hai To Khuda\n' +
+            'Tu Hai To Rab\n' +
+            'Tu Hai Toh Falak\n' +
+            'Tu Hai Toh Zameen X 5\n' +
+            'Oho..'
         },
         {
             name:"Tere Sang Yaara",
@@ -124,6 +155,7 @@ $(document).ready(function () {
         onclick_play('#song'+ i, i-1);
     }
     $('.current-song-name').hover(function () {
+        $('.song-lyrics').text(songsinfo[0].lyrics1);
         $('.song-lyrics').css('display','inline-block');
     }, function () {
         $('.song-lyrics').css('display','none')
