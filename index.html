@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <title>Songify</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="resources/css/bootstrap.css">
 </head>
 <body>
 <div class="wrapper">
@@ -29,48 +30,72 @@
             <div class="current-date"></div><br />
 
         </header>
-        <section class="content">
-            <audio src="song1.mp3" ></audio>
-            <div class="list-headers">
-                <div> Title </div>
-                <div> Artist </div>
-                <div> Album </div>
-                <div> Duration </div>
-            </div>
-            <div class="song-list">
+        <div class="container margin-zero">
+            <article class="row middle-area">
+                <section class="col-md-2 playlist">
+                    <h1>playlist</h1>
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequuntur, delectus
+                        doloremque eveniet facilis harum itaque laborum laudantium magnam modi nulla numquam odit optio
+                        quia quos repellat, sed unde voluptatibus.
+                    </div>
 
-                <div id="song1" class="song">
-                    <span class="song-name"></span>
-                    <span class="song-artist"></span>
-                    <span class="song-album"></span>
-                    <span class="song-length"></span>
-                </div>
-            </div>
-            <div id="song2" class="song-list">
-                <div class="song">
-                    <span class="song-name"></span>
-                    <span class="song-artist"></span>
-                    <span class="song-album"></span>
-                    <span class="song-length"></span>
-                </div>
-            </div>
-            <div id="song3" class="song-list">
-                <div class="song">
-                    <span class="song-name"></span>
-                    <span class="song-artist"></span>
-                    <span class="song-album"></span>
-                    <span class="song-length"></span>
-                </div>
-            </div>
-            <div id="song4" class="song-list">
-                <div class="song">
-                    <span class="song-name"></span>
-                    <span class="song-artist"></span>
-                    <span class="song-album"></span>
-                    <span class="song-length"></span>
-                </div>
-            </div>
-            <div class="song-lyrics"> </div>
+                </section>
+                <section class="content col-md-8">
+
+                    <audio src="song1.mp3" ></audio>
+                    <div class="list-headers">
+                        <div> Title </div>
+                        <div> Artist </div>
+                        <div> Album </div>
+                        <div> Duration </div>
+                    </div>
+                    <div class="song-list">
+
+                        <div id="song1" class="song">
+                            <span class="song-name"></span>
+                            <span class="song-artist"></span>
+                            <span class="song-album"></span>
+                            <span class="song-length"></span>
+                        </div>
+                    </div>
+                    <div id="song2" class="song-list">
+                        <div class="song">
+                            <span class="song-name"></span>
+                            <span class="song-artist"></span>
+                            <span class="song-album"></span>
+                            <span class="song-length"></span>
+                        </div>
+                    </div>
+                    <div id="song3" class="song-list">
+                        <div class="song">
+                            <span class="song-name"></span>
+                            <span class="song-artist"></span>
+                            <span class="song-album"></span>
+                            <span class="song-length"></span>
+                        </div>
+                    </div>
+                    <div id="song4" class="song-list">
+                        <div class="song">
+                            <span class="song-name"></span>
+                            <span class="song-artist"></span>
+                            <span class="song-album"></span>
+                            <span class="song-length"></span>
+                        </div>
+                    </div>
+
+
+                 </section>
+                <section class="col-md-2 lyrics">
+                    <h1>lyrics</h1>
+                    <div >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consectetur itaque maxime
+                        temporibus voluptate! Accusamus impedit in, iure laudantium possimus quas qui ratione, rem
+                        similique sunt vel voluptas, voluptatibus voluptatum.
+                    </div>
+                    </section>
+            </article>
+        </div>
+
+        <footer>
             <div class="current-song-wrapper">
                 <img src="https://i.ytimg.com/vi/iYjm0OSo7YM/hqdefault.jpg" alt="" class="current-song-image">
                 <div>
@@ -78,9 +103,6 @@
                     <p class="current-song-album">Tubelight</p>
                 </div>
             </div>
-        </section>
-        <footer>
-
             <div class="controls">
                 <div class="player-buttons">
                     <i class="fa fa-play clickable play-icon" aria-hidden="true"></i>
@@ -96,6 +118,7 @@
             </div>
         </footer>
     </section>
+
 </div>
 <script src="jquery-3.2.1.min.js"></script>
 <script src="main.js"></script>

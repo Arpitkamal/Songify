@@ -109,7 +109,7 @@ $(document).ready(function () {
         },
         {
             name:"Tinka Tinka dil mera",
-            artist:"Rahat fateh ali khan",
+            artist:"Rahat fateh ali",
             album:"Tubelight",
             duration:"5:02",
             url:"https://cover.djpunjab.com/40039/300x300/Tinka-Tinka-Dil-Mera-(Tubelight)-Rahat-Fateh-Ali-Khan.jpg",
