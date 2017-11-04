@@ -115,6 +115,7 @@ h1 {
 .main .content {
     width: 800px;
     margin: 2rem auto;
+    display: inline-block;
 }
 
 .list-headers {
@@ -204,4 +205,12 @@ h1 {
 }
 .current-song-album{
     margin-top: 0.4rem;
+}
+.song-lyrics{
+    display: none;
+    margin-top: 150px;
+    margin-left: 117px;
+}
+.current-song-name:hover .content.song-lyrics-outer {
+    display: inline-block;
 }

@@ -33,9 +33,11 @@ $(document).ready(function () {
     $('.input-wrapper form').on('submit' , function (event) {
         event.preventDefault();
         $('.welcome-screen').addClass('hidden');
-        var name = $('#name-input').val();
-        $('.main .user-name').html('Walcome, '+name);
+        var name_first = $('#name-input').val();
+        var name_last = $('#name-input-last').val();
+        $('.main .user-name').html('Walcome, '+name_first+name_last);
         $('.main').removeClass('hidden');
+        window.localStorage.setItem('goodname', JSON.stringify(name)); // use to store name in memory
         var fullDate = new Date();
         $('.main header .current-date').html(fullDate);
         $(document).on('keypress' , function (event) {
@@ -43,6 +45,7 @@ $(document).ready(function () {
                 togglemusic();
             }
         });
+        $('.song1-lyrics').css('display','none')
     });
 
 
@@ -120,4 +123,8 @@ $(document).ready(function () {
     for (var i=1 ;i<=songsinfo.length;i++){
         onclick_play('#song'+ i, i-1);
     }
+
+
+
+
 });
