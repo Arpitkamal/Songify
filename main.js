@@ -123,7 +123,12 @@ $(document).ready(function () {
     for (var i=1 ;i<=songsinfo.length;i++){
         onclick_play('#song'+ i, i-1);
     }
-
+    $('.current-song-name').hover(function () {
+        $('.song-lyrics').css('display','inline-block');
+    }, function () {
+        $('.song-lyrics').css('display','none')
+        }
+    )
 
 
 
