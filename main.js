@@ -81,23 +81,7 @@ $(document).ready(function () {
             'Apna Pataa Zindagi..\n' +
             'Taaron Bhari Ek Raat Mein\n' +
             'Tere Khat Padhenge Saath Mein\n' +
-            'Kora Jo Panna Reh Gaya\n' +
-            'Ek Kaanpte Se Haath Mein\n' +
-            'Thodi Shiqaayat Karna Tu\n' +
-            'Thodi Shiqayat Main Karun\n' +
-            'Naraaz Bas Na Hona Tu,\n' +
-            'Zindagi…\n' +
-            'Kuch To Bata Zindagi\n' +
-            'Apna Pataa Zindagi..\n' +
-            'Kuch Toh Bataa Zindagi\n' +
-            'Apna Pataa Zindagi..\n' +
-            'Tu Hai To Main Hoon..\n' +
-            'Tu Hai To Main Hoon..\n' +
-            'Tu Hai To Khuda\n' +
-            'Tu Hai To Rab\n' +
-            'Tu Hai Toh Falak\n' +
-            'Tu Hai Toh Zameen X 5\n' +
-            'Oho..'
+            'Zindagi…\n'
         },
         {
             name:"Tere Sang Yaara",
