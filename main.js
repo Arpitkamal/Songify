@@ -67,7 +67,7 @@ $(document).ready(function () {
         duration:"4:23",
             url:"https://i.ytimg.com/vi/iYjm0OSo7YM/hqdefault.jpg",
             songfile:'song1.mp3',
-            lyrics1:'Ek Din Mohabbat Odh Kar\n' +
+            lyrics:'Ek Din Mohabbat Odh Kar\n' +
             'Ek Din Gali Ke Mod Par\n' +
             'Teri Hatheli Par\n' +
             'Likhun Mera Naam Tere Naam Par\n' +
@@ -89,7 +89,38 @@ $(document).ready(function () {
             album:"Rustam",
             duration:"4:51",
             url:"http://s1.hulkshare.com/song_images/original/3/3/0/3300da097381b691b8c45a7fcec93ee1.jpg?dd=1471168193",
-            songfile:'song2.mp3'
+            songfile:'song2.mp3',
+            lyrics:'Tere sang yaara\n' +
+            'Khush rang bahara\n' +
+            'Tu raat deewani\n' +
+            'Main zard sitara\n' +
+            '\n' +
+            'O karam khudaya hai\n' +
+            'Tujhe mujhse milaya hai\n' +
+            'Tujhpe marke hi toh\n' +
+            'Mujhe jeena aaya hai\n' +
+            '\n' +
+            'O tere sang yaara\n' +
+            'Khushrang bahara\n' +
+            'Tu raat deewani\n' +
+            'Main zard sitara\n' +
+            '\n' +
+            'O tere sang yaara\n' +
+            'Khushrang bahara\n' +
+            'Main tera ho jaun\n' +
+            'Jo tu karde ishara\n' +
+            '\n' +
+            'Kahi kisi bhi gali mein jaaun main\n' +
+            'Teri khushbu se takraun main\n' +
+            'Har raat jo aata hai mujhe\n' +
+            'Woh khwab tu..\n' +
+            '\n' +
+            'Tera mera milna dastoor hai\n' +
+            'Tere hone se mujhme noor hai\n' +
+            'Main hoon soona sa ek aasmaan\n' +
+            'Mehtaab tu..\n' +
+            '\n'
+
         },
         {
             name:"Tinka Tinka dil mera",
@@ -97,7 +128,30 @@ $(document).ready(function () {
             album:"Tubelight",
             duration:"5:02",
             url:"https://cover.djpunjab.com/40039/300x300/Tinka-Tinka-Dil-Mera-(Tubelight)-Rahat-Fateh-Ali-Khan.jpg",
-            songfile:'song3.mp3'
+            songfile:'song3.mp3',
+            lyrics:'Tinka tinka dil mera\n' +
+            'Teri lau mein jalta hai\n' +
+            'Jaaye tu chaahe kahin\n' +
+            'Mere dil mein dhalta hai\n' +
+            '\n' +
+            '\n' +
+            'Katra katra dil mera\n' +
+            'Tere raah mein behta hai\n' +
+            'Jaaye tu chaahe kahin\n' +
+            'Mere dil mein rehta hai\n' +
+            '\n' +
+            'O… wo o…\n' +
+            '\n' +
+            'Teri ikk-ikk karke yaadein aati hain\n' +
+            'Meri ikk-ikk karke saansein jaati hain\n' +
+            'Yeh meri aah jo kabhi kahin nikal jaaye\n' +
+            'Maange bas ikk jhalak teri kahin toh mil jaaye\n' +
+            '\n' +
+            'Tukda tukda dil mera\n' +
+            'Tera rastaa takta hai\n' +
+            'Jaaye tu chaahe kahin\n' +
+            'Mere dil mein thamta hai\n' +
+            '\n'
         },
         {
             name:"Akad",
@@ -105,7 +159,24 @@ $(document).ready(function () {
             album:"Bhalwan Singh",
             duration:"3:29",
             url:"https://cover.djpunjab.com/40917/300x5/Aakad_(Bhalwan_Singh)_Ranjit_Bawa.jpg",
-            songfile:'song4.mp3'
+            songfile:'song4.mp3',
+            lyrics:'Nikke nikke cha maarde ne kilkaariyan,\n' +
+            'Khwaban vich rehn mere sehre phulkaariyan,\n' +
+            'Haan nikke nikke cha maarde ne kilkaariyan,\n' +
+            'Khwaban vich rehn mere sehre phulkaariyan,\n' +
+            '\n' +
+            'Oh pabb nachde,\n' +
+            'Pabb nachde bhoein na lagde,\n' +
+            'Ni udoo udoo chit karda,\n' +
+            '\n' +
+            'Gal mann le,\n' +
+            'Gal mann le aakad hunn bhan le,\n' +
+            'Ni tere bajon nayi sarda haye,\n' +
+            'Ni tere bajon nayi sarda,\n' +
+            '\n' +
+            'Aashiqui ishq kehde kamma vichon kamm ne,\n' +
+            'Chung leke la le jehde ginti de damm ne...,\n' +
+            '\n'
         }
     ];
 
@@ -129,6 +200,7 @@ $(document).ready(function () {
                 current_song.find('img').attr('src', songsinfo[index].url);        // for image in current play
                 current_song.find(' .current-song-album').text(songsinfo[index].album); //for album name in current play
                 current_song.find(' .current-song-name').text(songsinfo[index].name); // for song name in current play
+                displaylyrics(index);   //calling displaylyrics funtion
                 togglemusic();
             }else {
                 togglemusic();
@@ -138,13 +210,17 @@ $(document).ready(function () {
     for (var i=1 ;i<=songsinfo.length;i++){
         onclick_play('#song'+ i, i-1);
     }
-    $('.current-song-name').hover(function () {
-        $('.song-lyrics').text(songsinfo[0].lyrics1);
-        $('.song-lyrics').css('display','inline-block');
-    }, function () {
-        $('.song-lyrics').css('display','none')
-        }
-    )
+
+    function displaylyrics(index1) {
+        $('.current-song-name').hover(function () {
+                var song_lyrics_selector=$('.song-lyrics');
+                song_lyrics_selector.text(songsinfo[index1].lyrics);
+                song_lyrics_selector.css('display', 'inline-block');
+            }, function () {
+                $('.song-lyrics').css('display', 'none')
+            }
+        )
+    }
 
 
 
