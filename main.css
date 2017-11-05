@@ -223,8 +223,11 @@ h1 {
 }
 .playlist{
     margin-top: 10px;
-    padding: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     font-size: 17px;
+
+    height: 100%;
 }
 .margin-zero{
     margin: 0 !important;
@@ -244,4 +247,28 @@ h1 {
     padding: 0 !important;
 }
 
+.playlist .nav-pills a{
+    color: white ;
+}
+.playlist .nav-pills a:hover{
+    background-color: black !important;
+}
+.nav-pills .active a {
+    padding-right: 112px;
+    background-color: black !important;
+}
+.nav-pills li{
+    margin: 1px;
+}
+.song-section{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 10px;
 
+}
+.playlist h3{
+    margin-left: 15px;
+}
+.lyrics h1{
+    margin-left: 25px;
+}
