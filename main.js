@@ -1,7 +1,23 @@
 $(document).ready(function () {
+    $('.english_song').on('click',function () {
+        songsinfo =[
+            {
+                fileName: "https://goo.gl/rnsbfk",
+                lyricsLink: "http://www.lyricsted.com/tamma-tamma-again-badrinath-ki-dulhania/",
+                videoLink: "https://www.youtube.com/watch?v=EEX_XM6SxmY",
+                duration: "2:56",
+                album: "kk",
+                artist: "Neha Kakkar, Monali Thakur, Ikka Singh, Dev Negi",
+                name: "Badri Ki Dulhania (Title Track)",
+                image: "https://i.imgur.com/rj1EoV8.jpg"
+            }
+        ];
+
+
+    });
     var songsinfo =[];
     $.ajax({
-        url:'https://jsonbin.io/b/59f713154ef213575c9f652f',
+        url:'https://jsonbin.io/b/5a034888a6dd20501a49652b',
         method:'GET',
         dataType:'json',
         success: function (data) {
@@ -107,11 +123,15 @@ $(document).ready(function () {
         function displaylyrics(index1) {
             $('.current-song-name').hover(function () {
                     var song_lyrics_selector=$('.song-lyrics');
+                    var video=$('.song_video');
+                    console.log(video);
                     song_lyrics_selector.html(songsinfo[index1].lyricsLink);
-                    $('.lyrics > .song_video').src = songsinfo[index1].videoLink;
+                    video.src = songsinfo[index1].videoLink;
                     song_lyrics_selector.css('display', 'inline-block');
+                    video.css('display','inline-block');
                 }, function () {
-                    $('.song-lyrics').css('display', 'none')
+                    $('.song-lyrics').css('display', 'none');
+                    $('.song_video').css('display', 'none');
                 }
             )
         }
