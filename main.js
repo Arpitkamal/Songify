@@ -92,10 +92,11 @@ $(document).ready(function () {
                     current_song.find('img').attr('src', songsinfo[index].image);        // for image in current play
                     current_song.find(' .current-song-album').text(songsinfo[index].album); //for album name in current play
                     current_song.find(' .current-song-name').text(songsinfo[index].name); // for song name in current play
-                    // displaylyrics(index);   //calling displaylyrics funtion
+                    displaylyrics(index);   //calling displaylyrics funtion
                     togglemusic();
                 }else {
                     togglemusic();
+                    displaylyrics(index);  //first song lyrics is not display at the first time thats why call funtion
                 }
             });
         }
@@ -106,7 +107,8 @@ $(document).ready(function () {
         function displaylyrics(index1) {
             $('.current-song-name').hover(function () {
                     var song_lyrics_selector=$('.song-lyrics');
-                    song_lyrics_selector.text(songsinfo[index1].lyrics);
+                    song_lyrics_selector.html(songsinfo[index1].lyricsLink);
+                    $('.lyrics > .song_video').src = songsinfo[index1].videoLink;
                     song_lyrics_selector.css('display', 'inline-block');
                 }, function () {
                     $('.song-lyrics').css('display', 'none')
@@ -115,7 +117,7 @@ $(document).ready(function () {
         }
         function setfirstsong() {
             var firstsong = songsinfo[0];
-            song.src= firstsong.filename;
+            song.src= firstsong.fileName;
             var current_song= $('.current-song-wrapper');
             current_song.find('img').attr('src', firstsong.image);        // for image in current play
             current_song.find(' .current-song-album').text(firstsong.album); //for album name in current play
