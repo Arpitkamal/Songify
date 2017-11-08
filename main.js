@@ -6,6 +6,7 @@ $(document).ready(function () {
         dataType:'json',
         success: function (data) {
             songsinfo = data;
+            console.log(data);
             init();
         }
     });
@@ -85,13 +86,13 @@ $(document).ready(function () {
 
         function onclick_play(id , index) {
             $(id).on('click', function () {
-                if (song.src.search(songsinfo[index].filename) === -1){
-                    song.src = songsinfo[index].filename;
+                if (song.src.search(songsinfo[index].fileName) === -1){
+                    song.src = songsinfo[index].fileName;
                     var current_song= $('.current-song-wrapper');
                     current_song.find('img').attr('src', songsinfo[index].image);        // for image in current play
                     current_song.find(' .current-song-album').text(songsinfo[index].album); //for album name in current play
                     current_song.find(' .current-song-name').text(songsinfo[index].name); // for song name in current play
-                    displaylyrics(index);   //calling displaylyrics funtion
+                    // displaylyrics(index);   //calling displaylyrics funtion
                     togglemusic();
                 }else {
                     togglemusic();
