@@ -1,18 +1,5 @@
 $(document).ready(function () {
     $('.english_song').on('click',function () {
-        songsinfo =[
-            {
-                fileName: "https://goo.gl/rnsbfk",
-                lyricsLink: "http://www.lyricsted.com/tamma-tamma-again-badrinath-ki-dulhania/",
-                videoLink: "https://www.youtube.com/watch?v=EEX_XM6SxmY",
-                duration: "2:56",
-                album: "kk",
-                artist: "Neha Kakkar, Monali Thakur, Ikka Singh, Dev Negi",
-                name: "Badri Ki Dulhania (Title Track)",
-                image: "https://i.imgur.com/rj1EoV8.jpg"
-            }
-        ];
-
 
     });
     var songsinfo =[];
@@ -56,7 +43,7 @@ $(document).ready(function () {
             $('.time-elapsed').text(duration);
         }
         timer();
-        setInterval(timer, 1000);
+        setInterval(timer, 1000); // har 1 second bad call hoga
 
         $('.input-wrapper form').on('submit' , function (event) {
             event.preventDefault();
@@ -99,7 +86,7 @@ $(document).ready(function () {
         }
 
         // function for  on click play song in list
-
+        console.log(song.src);
         function onclick_play(id , index) {
             $(id).on('click', function () {
                 if (song.src.search(songsinfo[index].fileName) === -1){
@@ -135,6 +122,7 @@ $(document).ready(function () {
                 }
             )
         }
+        // function is use to display song when user enter first time
         function setfirstsong() {
             var firstsong = songsinfo[0];
             song.src= firstsong.fileName;
@@ -145,4 +133,11 @@ $(document).ready(function () {
         }
         setfirstsong();
     }
+    $('.random_button').on('click', function () {
+        $(this).css('color','black');
+        for (var i=0; i<songsinfo.length; i++);
+            song.src= songsinfo[i].fileName;
+
+    })
+
 });

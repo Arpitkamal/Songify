@@ -275,4 +275,7 @@ h1 {
 .song_video > body{
     margin: 0 !important;
 }
-#s
+.random_button {
+    margin-right: 90px;
+
+}
