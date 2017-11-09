@@ -9,7 +9,7 @@ $(document).ready(function () {
         dataType:'json',
         success: function (data) {
             songsinfo = data;
-            console.log(data);
+
             init();
         }
     });
@@ -78,7 +78,6 @@ $(document).ready(function () {
         for ( var i=0; i<songsinfo.length; i++) {
             var index=i+1;
             var audio = $('#song'+index);
-            console.log(audio);
             audio.find(' .song-name').text(songsinfo[i].name);
             audio.find(' .song-artist').text(songsinfo[i].artist);
             audio.find(' .song-album').text(songsinfo[i].album);
@@ -86,7 +85,6 @@ $(document).ready(function () {
         }
 
         // function for  on click play song in list
-        console.log(song.src);
         function onclick_play(id , index) {
             $(id).on('click', function () {
                 if (song.src.search(songsinfo[index].fileName) === -1){
@@ -111,9 +109,9 @@ $(document).ready(function () {
             $('.current-song-name').hover(function () {
                     var song_lyrics_selector=$('.song-lyrics');
                     var video=$('.song_video');
-                    console.log(video);
                     song_lyrics_selector.html(songsinfo[index1].lyricsLink);
-                    video.src = songsinfo[index1].videoLink;
+                    video[0].src =songsinfo[index1].videoLink ;  // use to give video link to iframe
+                    //video.attr(songsinfo[index1].videoLink);  attr is another option to give link
                     song_lyrics_selector.css('display', 'inline-block');
                     video.css('display','inline-block');
                 }, function () {
