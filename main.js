@@ -1,7 +1,4 @@
 $(document).ready(function () {
-    $('.english_song').on('click',function () {
-
-    });
     var songsinfo =[];
     $.ajax({
         url:'https://jsonbin.io/b/5a034888a6dd20501a49652b',
@@ -9,7 +6,6 @@ $(document).ready(function () {
         dataType:'json',
         success: function (data) {
             songsinfo = data;
-
             init();
         }
     });
@@ -48,7 +44,7 @@ $(document).ready(function () {
         $('.input-wrapper form').on('submit' , function (event) {
             event.preventDefault();
             $('.welcome-screen').addClass('hidden');
-            var name_first = $('#name-input').val();
+            var name_first = $('#name-input').val();               // take value from input form
             var name_last = $('#name-input-last').val();
             $('.main .user-name').html('Walcome, '+name_first+name_last);
             $('.main').removeClass('hidden');
@@ -60,7 +56,10 @@ $(document).ready(function () {
                     togglemusic();
                 }
             });
-            $('.song1-lyrics').css('display','none')
+            // $('.song1-lyrics').css('display','none');
+
+            // display total songs
+            $('.total_songs').html('Songs:'+ songsinfo.length);
         });
 
 
@@ -71,6 +70,8 @@ $(document).ready(function () {
         $('.main header>button').on('click' , function () {
             $('.main').addClass('hidden');
             $('.welcome-screen').removeClass('hidden');
+            $('#name-input').val('');
+            $('#name-input-last').val('');
         });
 
         // using objects song name ,artist, album,duration in display on list
@@ -131,11 +132,8 @@ $(document).ready(function () {
         }
         setfirstsong();
     }
-    $('.random_button').on('click', function () {
-        $(this).css('color','black');
-        for (var i=0; i<songsinfo.length; i++);
-            song.src= songsinfo[i].fileName;
 
-    })
+    // display total no of songs
+
 
 });
