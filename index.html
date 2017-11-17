@@ -15,7 +15,9 @@
 </head>
 <body>
 <div class="wrapper">
-    <section class="welcome-screen hidden">
+    <div id="loader" class="loader_div" ><img class="loader_img" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt=""></div>
+
+    <section class="welcome-screen ">
         <h1> Welcome to Songify </h1>
         <h3> Enter name to access your account </h3>
         <div class="input-wrapper">
@@ -32,7 +34,7 @@
             <div class="current-date"></div><br />
 
         </header>
-        <div class="container margin-zero">
+        <div class="container margin-zero hidden">
             <article class="row middle-area">
                 <section class="col-md-2 playlist">
                     <h3><i class="fa fa-scribd" aria-hidden="true"></i> Songify</h3>
@@ -86,7 +88,7 @@
                         </div>
                     </div>
                     <div class="total_songs"> </div>
-                    <div class="playall_songs">Play all:<i class="fa fa-play clickable play-icon" aria-hidden="true"></i></div>
+                    <div class="playall_songs">Play all:<i class="fa fa-play " aria-hidden="true"></i></div>
 
                  </section>
                 <section class="col-md-2 lyrics">

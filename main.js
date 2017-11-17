@@ -4,9 +4,13 @@ $(document).ready(function () {
         url:'https://jsonbin.io/b/5a034888a6dd20501a49652b',
         method:'GET',
         dataType:'json',
+        beforeSend: function () {
+            $('#loader').show();
+        },
         success: function (data) {
             songsinfo = data;
             init();
+            $('#loader').hide();
         }
     });
     function init() {
@@ -132,8 +136,18 @@ $(document).ready(function () {
         }
         setfirstsong();
     }
+    var i=1;
+    $('.playall_songs').on('click', function () {
+        var songc= $('audio')[0];
+        if (songc.currentTime  === songc.duration){
+            songc.src = songsinfo[i+1].fileName;
+            console.log(songc.src);
+            i++;
+            togglemusic();
+        }
 
-    // display total no of songs
+
+    });
 
 
 });
