@@ -69,6 +69,7 @@ $(document).ready(function () {
         $('.total_songs').html('Songs:' + songsinfo.length);
         //ajax call
         fetchSongs();
+        console.log(songsinfo);
     });
 
 
