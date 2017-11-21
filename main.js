@@ -11,6 +11,7 @@ $(document).ready(function () {
             },
             success: function (data) {
                 songsinfo = data;
+                init();
                 $('#loader').hide();
             }
         });
@@ -85,6 +86,69 @@ $(document).ready(function () {
     });
 
     // using objects song name ,artist, album,duration in display on list
+    function init() {
+        for (var i = 0; i < songsinfo.length; i++) {
+            var index = i + 1;
+            var audio = $('#song' + index);
+            audio.find(' .song-name').text(songsinfo[i].name);
+            audio.find(' .song-artist').text(songsinfo[i].artist);
+            audio.find(' .song-album').text(songsinfo[i].album);
+            audio.find(' .song-length').text(songsinfo[i].duration);
+        }
+        // function for  on click play song in list
+        function onclick_play(id, index) {
+            $(id).on('click', function () {
+                if (song.src.search(songsinfo[index].fileName) === -1) {
+                    song.src = songsinfo[index].fileName;
+                    var current_song = $('.current-song-wrapper');
+                    current_song.find('img').attr('src', songsinfo[index].image);        // for image in current play
+                    current_song.find(' .current-song-album').text(songsinfo[index].album); //for album name in current play
+                    current_song.find(' .current-song-name').text(songsinfo[index].name); // for song name in current play
+                    displaylyrics(index);   //calling displaylyrics funtion
+                    togglemusic();
+                } else {
+                    togglemusic();
+                    displaylyrics(index);  //first song lyrics is not display at the first time thats why call funtion
+                }
+            });
+        }
+        // calling above function for playsong on click
+        for (var i = 1; i <= songsinfo.length; i++) {
+            onclick_play('#song' + i, i - 1);
+        }
+        // funtion for display the lyrics and video on section 3
+
+        function displaylyrics(index1) {
+            $('.current-song-name').hover(function () {
+                    var song_lyrics_selector = $('.song-lyrics');
+                    var video = $('.song_video');
+                    song_lyrics_selector.html(songsinfo[index1].lyricsLink);
+                    video[0].src = songsinfo[index1].videoLink;  // use to give video link to iframe
+                    //video.attr(songsinfo[index1].videoLink);  attr is another option to give link
+                    song_lyrics_selector.css('display', 'inline-block');
+                    video.css('display', 'inline-block');
+                }, function () {
+                    $('.song-lyrics').css('display', 'none');
+                    $('.song_video').css('display', 'none');
+                }
+            )
+        }
+
+        // function is use to display song when user enter first time
+        function setfirstsong() {
+            var firstsong = songsinfo[0];
+            song.src = firstsong.fileName;
+            var current_song = $('.current-song-wrapper');
+            current_song.find('img').attr('src', firstsong.image);        // for image in current play
+            current_song.find(' .current-song-album').text(firstsong.album); //for album name in current play
+            current_song.find(' .current-song-name').text(firstsong.name)
+        }
+
+        setfirstsong();
+    }
+
+
+    // using objects song name ,artist, album,duration in display on list
 
     for (var i = 0; i < songsinfo.length; i++) {
         var index = i + 1;
@@ -95,55 +159,13 @@ $(document).ready(function () {
         audio.find(' .song-length').text(songsinfo[i].duration);
     }
 
-    // function for  on click play song in list
-    function onclick_play(id, index) {
-        $(id).on('click', function () {
-            if (song.src.search(songsinfo[index].fileName) === -1) {
-                song.src = songsinfo[index].fileName;
-                var current_song = $('.current-song-wrapper');
-                current_song.find('img').attr('src', songsinfo[index].image);        // for image in current play
-                current_song.find(' .current-song-album').text(songsinfo[index].album); //for album name in current play
-                current_song.find(' .current-song-name').text(songsinfo[index].name); // for song name in current play
-                displaylyrics(index);   //calling displaylyrics funtion
-                togglemusic();
-            } else {
-                togglemusic();
-                displaylyrics(index);  //first song lyrics is not display at the first time thats why call funtion
-            }
-        });
-    }
 
-    for (var i = 1; i <= songsinfo.length; i++) {
-        onclick_play('#song' + i, i - 1);
-    }
 
-    function displaylyrics(index1) {
-        $('.current-song-name').hover(function () {
-                var song_lyrics_selector = $('.song-lyrics');
-                var video = $('.song_video');
-                song_lyrics_selector.html(songsinfo[index1].lyricsLink);
-                video[0].src = songsinfo[index1].videoLink;  // use to give video link to iframe
-                //video.attr(songsinfo[index1].videoLink);  attr is another option to give link
-                song_lyrics_selector.css('display', 'inline-block');
-                video.css('display', 'inline-block');
-            }, function () {
-                $('.song-lyrics').css('display', 'none');
-                $('.song_video').css('display', 'none');
-            }
-        )
-    }
 
-    // function is use to display song when user enter first time
-    function setfirstsong() {
-        var firstsong = songsinfo[0];
-        song.src = firstsong.fileName;
-        var current_song = $('.current-song-wrapper');
-        current_song.find('img').attr('src', firstsong.image);        // for image in current play
-        current_song.find(' .current-song-album').text(firstsong.album); //for album name in current play
-        current_song.find(' .current-song-name').text(firstsong.name)
-    }
 
-    setfirstsong();
+
+
+
 
 
     });
