@@ -158,17 +158,7 @@ $(document).ready(function () {
         audio.find(' .song-album').text(songsinfo[i].album);
         audio.find(' .song-length').text(songsinfo[i].duration);
     }
-
-
-
-
-
-
-
-
-
-
-    });
+    //play all songs
     var i=1;
     $('.playall_songs').on('click', function () {
         var songc = $('audio')[0];
@@ -178,5 +168,7 @@ $(document).ready(function () {
             i++;
             togglemusic();
         }
+
+    });
 
 });
