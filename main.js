@@ -13,6 +13,10 @@ $(document).ready(function () {
                 songsinfo = data;
                 init();
                 $('#loader').hide();
+            },
+            error: function (data) {
+                alert("Sorry song could not be fetched !! please try again ..");
+                $('#loader').hide();
             }
         });
     }
@@ -77,7 +81,7 @@ $(document).ready(function () {
     $('.clickable').on('click', togglemusic);
 
 
-//back button
+    //back button
     $('.main header>button').on('click', function () {
         $('.main').addClass('hidden');
         $('.welcome-screen').removeClass('hidden');
